@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📊 Amazon Fulfillment Centers – Workforce Analytics
 
 A data analytics and Natural Language Processing (NLP) project
