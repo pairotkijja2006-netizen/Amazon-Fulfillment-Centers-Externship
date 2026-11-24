@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📊 Amazon Fulfillment Centers – Workforce Analytics
 
 A data analytics and Natural Language Processing (NLP) project
@@ -403,3 +404,6 @@ that create real-world impact.
 ---
 
 **Turning unstructured data into actionable insights.**
+=======
+# Amazon-Fulfillment-Centers-Externship-Files
+>>>>>>> b507e3fa53b609bf30ecca31c9e8e1ee58a34b9a
