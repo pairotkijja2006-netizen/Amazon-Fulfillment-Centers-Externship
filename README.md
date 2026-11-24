@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 📊 Workforce Sentiment Analysis | Amazon Fulfillment Centers
+=======
+# 📊 Amazon Fulfillment Centers – Workforce Analytics
+>>>>>>> c32e3f2882ab0cc5aeafb008242b55a86ec83879
 
 Transforming unstructured workforce feedback into actionable
 business insights through natural language processing,
