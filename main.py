@@ -14,14 +14,18 @@ def run(glassdoor_path, youtube_path, output_path, stop_words=None):
     output.mkdir(parents=True, exist_ok=True)
     stop_words = load_stopwords() if stop_words is None else set(stop_words)
     glassdoor_raw = pd.read_csv(glassdoor_path)
-    youtube_raw = pd.read_csv(youtube_path)
+    youtube_raw = pd.read_csv(youtube_path) if youtube_path is not None else None
     glassdoor = clean_glassdoor(glassdoor_raw, stop_words)
-    youtube = clean_youtube(youtube_raw, stop_words)
+    youtube = clean_youtube(youtube_raw, stop_words) if youtube_raw is not None else None
     glassdoor.to_csv(output / 'glassdoor_cleaned.csv', index=False)
-    youtube.to_csv(output / 'youtube_cleaned.csv', index=False)
+    if youtube is not None:
+        youtube.to_csv(output / 'youtube_cleaned.csv', index=False)
     glassdoor = score_sentiment(glassdoor, 'combined_text')
-    youtube = score_sentiment(youtube, 'Transcript')
-    for platform, df, column in [('Glassdoor', glassdoor, 'cleaned_text'), ('YouTube', youtube, 'transcript_cleaned')]:
+    platforms = [('Glassdoor', glassdoor, 'cleaned_text')]
+    if youtube is not None:
+        youtube = score_sentiment(youtube, 'Transcript')
+        platforms.append(('YouTube', youtube, 'transcript_cleaned'))
+    for platform, df, column in platforms:
         folder = output / platform.lower()
         folder.mkdir(exist_ok=True)
         df.to_csv(folder / 'sentiment.csv', index=False)
@@ -40,7 +44,10 @@ def run(glassdoor_path, youtube_path, output_path, stop_words=None):
     by_platform.to_csv(output / 'themes_by_platform.csv')
     pd.crosstab(combined['platform'], combined['sentiment_label']).to_csv(output / 'sentiment_by_platform.csv')
     print(f'Glassdoor: {len(glassdoor_raw)} input rows -> {len(glassdoor)} cleaned rows')
-    print(f'YouTube: {len(youtube_raw)} input rows -> {len(youtube)} cleaned rows')
+    if youtube is not None:
+        print(f'YouTube: {len(youtube_raw)} input rows -> {len(youtube)} cleaned rows')
+    else:
+        print('YouTube: skipped (no transcript dataset supplied)')
     print(f'Results saved to {output}')
     return tagged
 
@@ -48,7 +55,13 @@ def run(glassdoor_path, youtube_path, output_path, stop_words=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--glassdoor', required=True, type=Path, help='Path to Glassdoor CSV')
-    parser.add_argument('--youtube', required=True, type=Path, help='Path to YouTube CSV')
+    parser.add_argument('--youtube', type=Path, help='Optional path to YouTube CSV; omit for Glassdoor-only analysis')
+    parser.add_argument('--offline-stopwords', action='store_true', help='Use WordCloud stopwords instead of NLTK (different keyword counts)')
     parser.add_argument('--output', default=Path('outputs'), type=Path)
     args = parser.parse_args()
-    run(args.glassdoor, args.youtube, args.output)
+    if args.offline_stopwords:
+        from wordcloud import STOPWORDS
+        print('Using WordCloud stopwords; keyword counts may differ from NLTK.')
+        run(args.glassdoor, args.youtube, args.output, stop_words=STOPWORDS)
+    else:
+        run(args.glassdoor, args.youtube, args.output)

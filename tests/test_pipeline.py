@@ -43,3 +43,12 @@ def test_end_to_end_synthetic(tmp_path):
     assert set(result.platform) == {'Glassdoor', 'YouTube'}
     assert (tmp_path / 'combined_with_themes.csv').exists()
     assert (tmp_path / 'glassdoor' / 'wordcloud.png').exists()
+
+
+def test_glassdoor_only(tmp_path):
+    result = run(ROOT / 'data/glassdoor_sample.csv', None, tmp_path,
+                 stop_words={'the', 'a', 'and', 'is'})
+    assert set(result.platform) == {'Glassdoor'}
+    assert len(result) == len(pd.read_csv(ROOT / 'data/glassdoor_sample.csv'))
+    assert not (tmp_path / 'youtube').exists()
+    assert (tmp_path / 'combined_with_themes.csv').exists()

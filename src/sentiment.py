@@ -25,7 +25,9 @@ def score_sentiment(df, text_column):
 def combine_datasets(glassdoor, youtube):
     columns = ['cleaned_text', 'sentiment_polarity', 'sentiment_subjectivity', 'sentiment_label']
     glassdoor = glassdoor.assign(analysis_text=glassdoor['combined_text'], platform='Glassdoor')
+    columns += ['platform', 'analysis_text']
+    if youtube is None:
+        return glassdoor[columns].reset_index(drop=True)
     youtube = youtube.rename(columns={'transcript_cleaned': 'cleaned_text'}).assign(
         analysis_text=youtube['Transcript'], platform='YouTube')
-    columns += ['platform', 'analysis_text']
     return pd.concat([glassdoor[columns], youtube[columns]], ignore_index=True)

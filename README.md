@@ -1,78 +1,73 @@
-<<<<<<< HEAD
-# 📊 Amazon Fulfillment Centers – Workforce Analytics
+# 📊 Workforce Sentiment Analysis | Amazon Fulfillment Centers
 
-A data analytics and Natural Language Processing (NLP) project
-exploring potential workforce attrition drivers at Amazon
-Fulfillment Centers through employee feedback, sentiment analysis,
-and thematic classification.
-
-Developed during my Data Analytics Externship from May to June 2026.
+Transforming unstructured workforce feedback into actionable
+business insights through natural language processing,
+sentiment analysis, and data visualization.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NLTK](https://img.shields.io/badge/NLTK-NLP-green?style=for-the-badge)
-![TextBlob](https://img.shields.io/badge/TextBlob-Sentiment_Analysis-blue?style=for-the-badge)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge)
+![NLTK](https://img.shields.io/badge/NLTK-NLP-339933?style=for-the-badge)
+![TextBlob](https://img.shields.io/badge/TextBlob-Sentiment_Analysis-4285F4?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Data_Visualization-orange?style=for-the-badge)
 ![WordCloud](https://img.shields.io/badge/WordCloud-Text_Visualization-purple?style=for-the-badge)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 
 ---
 
 ## 👨‍💻 About My Role
 
-**Role:** Data Analytics Extern
+**Data Analytics Extern | Amazon Fulfillment Centers**
 
-**Organization:** Amazon Fulfillment Centers – Industry Project
+**May 2026 – June 2026**
 
-**Duration:** May 2026 – June 2026
+During my externship, I combined my interests in computer
+science and business to investigate potential workforce
+attrition drivers at Amazon Fulfillment Centers.
 
-**Developer:** Mio Pairotkijja
+I developed Python-based analytical programs to process
+employee feedback from Glassdoor and YouTube, identify
+recurring workplace concerns, and translate analytical
+findings into actionable employee retention strategies.
 
-Throughout this externship, I applied my interests in computer
-science, business, and data analytics to investigate workforce
-challenges and develop data-driven employee retention strategies.
-
-I developed Python-based programs to process unstructured employee
-feedback, extract meaningful patterns, and translate analytical
-findings into actionable business recommendations.
+This project allowed me to apply programming, natural
+language processing, and data analytics to real-world
+business challenges.
 
 ---
 
 ## 💡 Inspiration
 
-Employee feedback contains valuable insights into workplace
-conditions, managerial support, employee satisfaction,
-and workforce retention.
+Employee feedback provides valuable insights into workplace
+conditions, employee satisfaction, and organizational
+challenges.
 
-However, manually reviewing large amounts of unstructured
-feedback can be time-consuming and make recurring patterns
+However, manually analyzing large amounts of unstructured
+feedback can be inefficient and make recurring patterns
 difficult to identify.
 
-This project explores how programming, natural language
-processing, and data visualization can transform unstructured
-feedback into meaningful insights that support business
-decision-making.
+The objective of this project was to use computational
+techniques to extract meaningful insights from workforce
+feedback and develop data-driven recommendations that
+could support employee retention.
 
 ---
 
 ## 🚀 What It Does
 
-The project analyzes workforce feedback collected from
-Glassdoor reviews and YouTube transcripts.
+The project implements an end-to-end workforce analytics
+pipeline that supports:
 
-The analytical pipeline performs:
-
-- Data cleaning and preprocessing
+- Automated data cleaning and preprocessing
 - Missing value and duplicate removal
-- Natural language processing
+- Natural language processing (NLP)
 - Sentiment polarity and subjectivity analysis
+- Positive, neutral, and negative sentiment classification
 - Keyword frequency extraction
 - Unigram, bigram, and trigram analysis
-- Rule-based thematic classification
 - Cross-platform dataset integration
-- Data visualization
-
-These techniques help identify recurring workforce concerns
-and potential employee attrition drivers.
+- Rule-based thematic classification
+- Automated data visualization and report generation
 
 ---
 
@@ -80,30 +75,32 @@ and potential employee attrition drivers.
 
 | Metric | Accomplishment |
 |---|---|
-| 150+ | Employee reviews analyzed |
-| 2 | Data sources integrated |
-| 3 | Levels of n-gram analysis |
+| 141 | Recovered Glassdoor dataset rows processed |
+| 132 | Cleaned records retained |
+| 28 | Original dataset fields |
+| 93.6% | Data retention rate in the recovered dataset run |
+| 2 | Data platforms analyzed during the externship |
 | 5 | Workforce themes investigated |
 | 2 | Employee retention strategies proposed |
+| 6 | Automated tests passed in the portfolio refactor |
 
 ---
 
 ## ⚙️ How It Works
 
-1. Collect structured review data and video transcripts.
-2. Clean datasets by removing missing values, duplicates,
-   punctuation, and unnecessary information.
-3. Apply NLP techniques to preprocess unstructured text.
+1. Import workforce feedback from CSV datasets.
+2. Remove incomplete, redundant, and unnecessary data.
+3. Preprocess unstructured text using NLTK.
 4. Calculate sentiment polarity and subjectivity using TextBlob.
-5. Extract frequently occurring keywords and phrases.
-6. Integrate Glassdoor and YouTube sentiment datasets.
+5. Extract frequently occurring words and phrases.
+6. Integrate datasets into a standardized format.
 7. Classify feedback into predefined workforce themes.
-8. Visualize analytical findings and identify recurring patterns.
-9. Develop actionable employee retention recommendations.
+8. Generate visualizations and analytical reports.
+9. Translate findings into employee retention recommendations.
 
 ---
 
-## 🧠 System Architecture
+## 🧠 Analysis Pipeline
 
 ```mermaid
 flowchart TD
@@ -113,95 +110,70 @@ flowchart TD
     C --> E[Sentiment Analysis]
     D --> F[Keyword Extraction]
     F --> G[N-gram Analysis]
-    D --> H[Cross-Platform Data Integration]
+    D --> H[Dataset Integration]
     E --> H
-    H --> I[Rule-Based Theme Classification]
+    H --> I[Thematic Classification]
     G --> J[Data Visualization]
     I --> J
     J --> K[Workforce Insights]
-    K --> L[Employee Retention Recommendations]
+    K --> L[Retention Recommendations]
 ```
 
 ---
 
-## 🔍 Technical Implementation
+## 🔍 Workforce Themes
 
-### Data Cleaning and Preprocessing
+The thematic classification system investigates five
+key workforce themes:
 
-Developed Python programs using pandas and NLTK to prepare
-unstructured feedback for analysis.
+### 1. Physical Exhaustion and Burnout
 
-- Removed duplicate records
-- Handled missing values
-- Filtered unnecessary dataset columns
-- Normalized text
-- Removed punctuation and stopwords
-- Combined multiple review fields
+Physical demands, repetitive movements, fatigue, and
+workplace exhaustion.
 
-### Sentiment Analysis
+### 2. Productivity Targets and Micromanagement
 
-Implemented TextBlob to calculate sentiment polarity and
-subjectivity scores.
+Productivity expectations, performance monitoring,
+workplace pressure, and employee autonomy.
 
-Feedback was classified using the following thresholds:
+### 3. Feeling Replaceable and Undervalued
+
+Employee recognition, managerial support, workplace
+morale, and feelings of appreciation.
+
+### 4. Pay and Benefits
+
+Compensation, wages, insurance, financial incentives,
+and employee benefits.
+
+### 5. Scheduling and Work-Life Balance
+
+Shift flexibility, overtime, scheduling, rest periods,
+and work-life balance.
+
+---
+
+## 📊 Sentiment Analysis
+
+TextBlob is used to calculate sentiment polarity and
+subjectivity scores for workforce feedback.
 
 | Polarity Score | Classification |
 |---|---|
 | Greater than 0.1 | Positive |
-| Between -0.1 and 0.1 | Neutral |
+| -0.1 to 0.1 | Neutral |
 | Less than -0.1 | Negative |
 
-Sentiment distributions were compared across Glassdoor
-and YouTube datasets.
-
-### Keyword Extraction and N-gram Analysis
-
-Used NLTK and Python's Counter to identify frequently
-occurring words and phrases.
-
-- Unigrams: individual words
-- Bigrams: sequences of two words
-- Trigrams: sequences of three words
-
-These techniques helped identify recurring topics and
-patterns within employee feedback.
-
-### Rule-Based Thematic Classification
-
-Developed a keyword-based classification system to categorize
-feedback across five workforce themes:
-
-1. Physical Exhaustion and Burnout
-2. Pressure from Productivity Targets and Micromanagement
-3. Feeling Replaceable and Undervalued
-4. Pay and Benefits as a Key Motivation
-5. Mixed Views on Scheduling and Work-Life Balance
-
-Individual feedback records can be associated with
-multiple themes.
-
-### Cross-Platform Data Integration
-
-Combined Glassdoor reviews and YouTube transcripts into
-a standardized dataset containing:
-
-- Cleaned text
-- Sentiment polarity
-- Sentiment subjectivity
-- Sentiment classification
-- Source platform
-- Workforce theme classifications
-
-### Data Visualization
-
-Used Matplotlib and WordCloud to communicate analytical
-findings through:
+The pipeline generates:
 
 - Sentiment distribution bar charts
 - Sentiment breakdown pie charts
 - Keyword frequency charts
-- Bigram and trigram visualizations
+- Bigram frequency charts
+- Trigram frequency charts
 - Word clouds
+- Workforce theme frequency tables
+- Cross-platform sentiment comparisons
 
 ---
 
@@ -212,11 +184,66 @@ findings through:
 | Programming | Python |
 | Data Processing | pandas |
 | Natural Language Processing | NLTK, TextBlob |
-| Feature Extraction | Tokenization, N-grams, Keyword Frequency |
-| Classification | Rule-Based Classification |
+| Feature Extraction | Tokenization, N-grams, Keyword Extraction |
+| Classification | Rule-Based Multi-Label Classification |
 | Data Visualization | Matplotlib, WordCloud |
-| Development Environment | Jupyter Notebook, Google Colab |
+| Automated Testing | pytest |
+| Development | Google Colab, Jupyter Notebook |
 | Version Control | Git, GitHub |
+
+---
+
+## ⚠️ Technical Challenges
+
+- Processing inconsistent and unstructured text data.
+- Handling missing values and duplicate records.
+- Standardizing data from multiple platforms.
+- Extracting meaningful keywords while filtering noise.
+- Designing keyword dictionaries for thematic classification.
+- Interpreting sentiment within workplace contexts.
+- Translating analytical findings into practical business
+  recommendations.
+
+---
+
+## 🏅 Business Impact
+
+Based on my analytical findings, I developed two actionable
+employee retention recommendations.
+
+### Structured Supervisor Check-ins
+
+Proposed regular supervisor-employee check-ins to strengthen
+managerial support, identify workplace concerns, and improve
+communication.
+
+### Employee Feedback Mechanisms
+
+Proposed structured feedback mechanisms to provide employees
+with opportunities to communicate workplace concerns and
+receive recognition.
+
+These recommendations were submitted to Amazon for evaluation.
+
+---
+
+## 📚 What I Learned
+
+Throughout this externship, I gained practical experience in:
+
+- Python programming and real-world data processing
+- Natural language processing
+- Sentiment analysis
+- Data preprocessing and feature extraction
+- Exploratory data analysis
+- Multi-source data integration
+- Rule-based text classification
+- Data visualization
+- Translating technical findings into business strategies
+
+This experience strengthened my interest in combining
+computer science and business to develop technology-driven
+solutions that create meaningful real-world impact.
 
 ---
 
@@ -225,95 +252,27 @@ findings through:
 ```text
 workforce-sentiment-analysis/
 │
+├── main.py
+├── README.md
+├── requirements.txt
+├── requirements-dev.txt
+├── .gitignore
+│
 ├── src/
+│   ├── __init__.py
 │   ├── cleaning.py
 │   ├── sentiment.py
 │   ├── keywords.py
 │   ├── themes.py
-│   ├── visualization.py
-│   └── __init__.py
+│   └── visualization.py
 │
 ├── data/
 │   ├── glassdoor_sample.csv
 │   └── youtube_sample.csv
 │
-├── tests/
-│   └── test_pipeline.py
-│
-├── main.py
-├── requirements.txt
-├── requirements-dev.txt
-├── .gitignore
-└── README.md
+└── tests/
+    └── test_pipeline.py
 ```
-
----
-
-## ⚠️ Technical Challenges
-
-- Processing inconsistent and unstructured text data.
-- Handling missing values and duplicate records.
-- Standardizing datasets from different platforms.
-- Identifying meaningful keywords while filtering noise.
-- Designing keyword dictionaries for thematic classification.
-- Interpreting sentiment scores within workplace contexts.
-- Translating technical findings into practical business
-  recommendations.
-
----
-
-## 🏅 Business Impact
-
-Based on the analytical findings, I developed two employee
-retention recommendations focused on:
-
-### Structured Supervisor Check-ins
-
-Encouraging regular communication between supervisors and
-employees to identify workplace concerns and strengthen
-managerial support.
-
-### Employee Feedback Mechanisms
-
-Creating structured opportunities for employees to communicate
-concerns, receive recognition, and provide feedback about
-workplace conditions.
-
-These recommendations were submitted to Amazon for evaluation.
-
----
-
-## 📚 What I Learned
-
-Through this externship, I gained practical experience in:
-
-- Python programming for real-world data processing
-- Natural language processing
-- Sentiment analysis and text classification
-- Data cleaning and feature extraction
-- Integrating multiple data sources
-- Exploratory data analysis
-- Data visualization and communication
-- Translating technical insights into business strategies
-- Applying computer science to real-world business challenges
-
-This experience strengthened my interest in combining
-computer science and business to develop technology-driven
-solutions with meaningful organizational impact.
-
----
-
-## 🔮 Future Development
-
-Potential improvements to this project include:
-
-- [ ] Transformer-based sentiment analysis using BERT
-- [ ] Machine learning-based thematic classification
-- [ ] Automated topic modeling
-- [ ] Interactive analytics dashboard
-- [ ] Improved sentiment classification accuracy
-- [ ] Evaluation against manually labeled feedback
-- [ ] Expanded cross-platform data analysis
 
 ---
 
@@ -321,89 +280,126 @@ Potential improvements to this project include:
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.10 or higher
 - pip
 
-### Installation
-
-Clone the repository and navigate into the project directory.
-
-Create a virtual environment:
+### 1. Create a Virtual Environment
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install the required dependencies:
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Download the required NLTK resources:
+### 3. Download NLTK Resources
 
 ```bash
 python -m nltk.downloader stopwords
 ```
 
-Run the analytical pipeline using the provided sample datasets:
+### 4. Run the Demonstration
 
 ```bash
 python main.py --glassdoor data/glassdoor_sample.csv --youtube data/youtube_sample.csv
 ```
 
-### Running Tests
+### 5. Run With Original Data
+
+If you have authorized access to the original dataset,
+place it inside the private_data directory.
+
+```bash
+python main.py --glassdoor private_data/glass_reviews_completed.csv --output outputs/recovered
+```
+
+### 6. Run Without Downloading NLTK Resources
+
+```bash
+python main.py --glassdoor data/glassdoor_sample.csv --offline-stopwords
+```
+
+### 7. Run Automated Tests
 
 ```bash
 pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
----
-
-## 📌 Methodology and Limitations
-
-Sentiment scores and keyword-based theme classifications
-are heuristic estimates rather than validated predictions.
-
-The analysis identifies recurring patterns and potential
-workforce concerns but does not establish causal relationships
-between employee feedback and workforce attrition.
-
-The repository is a modular portfolio refactor of my original
-externship notebooks, with additional improvements to code
-organization, reproducibility, and testing.
+Generated visualizations and analytical results are saved
+in the outputs directory.
 
 ---
 
-## 🔒 Data Privacy
+## 🔮 Future Development
 
-To protect employee privacy and project confidentiality,
-this repository contains synthetic sample datasets rather
-than the original employee reviews or transcripts.
+- [ ] Transformer-based sentiment analysis using BERT
+- [ ] Machine learning-based thematic classification
+- [ ] Automated topic modeling
+- [ ] Interactive workforce analytics dashboard
+- [ ] Employee cohort analysis
+- [ ] Sentiment model accuracy evaluation
+- [ ] Expanded data integration
+- [ ] Automated analytical report generation enhancements
 
-This repository is an independent portfolio demonstration
+---
+
+## 📌 Portfolio Improvements
+
+Following the original externship, this project was
+refactored into a modular Python application to improve
+code organization, maintainability, and reproducibility.
+
+Additional improvements include:
+
+- Reusable Python modules
+- Automated end-to-end pipeline execution
+- Command-line arguments
+- Improved keyword and phrase matching
+- Automated visualization generation
+- Synthetic demonstration datasets
+- Six automated unit and integration tests
+
+These improvements represent subsequent portfolio
+development rather than original externship deliverables.
+
+---
+
+## 🔒 Data Privacy and Limitations
+
+The public repository uses synthetic demonstration datasets
+to protect employee privacy and project confidentiality.
+
+Sentiment scores and keyword-based classifications are
+heuristic estimates. They identify recurring patterns but
+do not establish causal relationships between workplace
+conditions and employee attrition.
+
+This project is an independent portfolio demonstration
 of my technical contributions and is not an official
 Amazon software product.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 About Me
 
 **Mio Pairotkijja**
 
-University of British Columbia
+University of British Columbia (UBC)
 
 Combined Major in Business and Computer Science (BUCS)
 
-Passionate about software engineering, artificial intelligence,
-game development, and building technology-driven solutions
-that create real-world impact.
+I am a second-year student passionate about software
+engineering, artificial intelligence, game development,
+and building technology-driven solutions to real-world
+problems.
+
+My interests lie at the intersection of computer science
+and business, where I can apply technical skills to create
+meaningful and practical solutions.
 
 ---
-
-**Turning unstructured data into actionable insights.**
-=======
-# Amazon-Fulfillment-Centers-Externship-Files
->>>>>>> b507e3fa53b609bf30ecca31c9e8e1ee58a34b9a
