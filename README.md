@@ -384,24 +384,3 @@ conditions and employee attrition.
 This project is an independent portfolio demonstration
 of my technical contributions and is not an official
 Amazon software product.
-
----
-
-## 👨‍💻 About Me
-
-**Mio Pairotkijja**
-
-University of British Columbia (UBC)
-
-Combined Major in Business and Computer Science (BUCS)
-
-I am a second-year student passionate about software
-engineering, artificial intelligence, game development,
-and building technology-driven solutions to real-world
-problems.
-
-My interests lie at the intersection of computer science
-and business, where I can apply technical skills to create
-meaningful and practical solutions.
-
----
